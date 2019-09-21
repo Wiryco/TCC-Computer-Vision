@@ -5,3 +5,9 @@
     margin-right: auto;
     width: 90%;
 }
+
+#cardconfig {
+    background-color: rgb(236, 219, 217);
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: .25rem;
+}

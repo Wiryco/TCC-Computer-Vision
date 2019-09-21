@@ -4,7 +4,7 @@ def homepage_view(request):
     return render(request, 'core/homepage.html', {})
 
 def index_view(request):
-    return render(request, 'core/base.html')
+    return render(request, 'core/description.html')
 
 # def base_pyview(request):
 #     return render(request, 'core/index.html')
