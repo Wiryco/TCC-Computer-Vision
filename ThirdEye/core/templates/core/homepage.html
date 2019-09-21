@@ -8,11 +8,15 @@
     <title>Third Eye Project</title>
     <link rel="stylesheet" href="{% static 'css/homepage.css' %}">
 </head>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <body id="bg" style="background-image: url('{% static "images/bg.jpg" %}')">
     <div class="card" id="card-principal">
       <div class="card-header bg-dark" id="configdivimg">
           <img class="configimgdoctum" src="static/images/doctum-logo-white.png" alt="Logo Rede de Ensino Doctum">
+          <div style="text-align-last: right;">
+            <a href="{% url 'index_view' %}" class="btn btn-light">Entrar!</a>
+          </div>
       </div>
       <div class="card-body">
         <h1 class="card-title">TCC - Third Eye </h1>
@@ -28,8 +32,12 @@
                 <div class="card" id="cards-layout" style="width: 18rem;">
                     <img class="card-img-top" src="static/images/21321981.jpg" alt="Tales Souza">
                     <div class="card-body" id="carbodyconfig">
-                      <h4 class="card-title" align="center">Esp. Tales Wallace Souza</h4>
-                      <p class="card-text" id="carddescriptionconfig">Analista de Automação - APERAM SOUTH AMÉRICA</p>
+                      <h5 class="card-title" align="center">Esp. Tales Wallace Souza</h5>
+                      <p class="card-text" id="carddescriptionconfig">Analista de Automação - APERAM SOUTH AMÉRICA
+                      <br>
+                        <a class="btn fab fa-linkedin-in" href="https://www.linkedin.com/in/taleswsouza" align="center"><i class=""></i></a>
+                        <a class="btn fab fa-github" href="https://github.com/taleswsouza" align="center"><i class=""></i></a>
+                      </p>
                     </div>
                   </div>
               </div>
@@ -39,15 +47,24 @@
                     <div class="card">
                       <img class="card-img-top" src="static/images/27380564.jpg" alt="Thayrone Marques">
                       <div class="card-body" id="carbodyconfig">
-                        <h5 class="card-title" align="center">THAYRONE MARQUES SILVA</h5>
-                        <p class="card-text" id="carddescriptionconfig">Analista I de Desenvolvimento - TOTVS</p>
+                        <h5 class="card-title" align="center">Thayrone Marques Silva</h5>
+                        <p class="card-text" id="carddescriptionconfig">Analista I de Desenvolvimento - TOTVS
+                        <br>
+                        <br>
+                        <a class="btn fab fa-linkedin-in" href="https://www.linkedin.com/in/thayronemarques" align="center"><i class=""></i></a>
+                        <a class="btn fab fa-github" href="https://github.com/thayroneprog" align="center"><i class=""></i></a>
+                        </p>
                       </div>
                     </div>
                     <div class="card">
                       <img class="card-img-top" src="static/images/30848464.jpg" alt="Vinicius Andrade">
                       <div class="card-body" id="carbodyconfig">
-                        <h5 class="card-title" align="center">VINÍCIUS ANDRADE LOPES</h5>
-                        <p class="card-text" id="carddescriptionconfig">Etagiário Sistemas de Informação - APERAM SOUTH AMÉRICA</p>
+                        <h5 class="card-title" align="center">Vinícius Andrade Lopes</h5>
+                        <p class="card-text" id="carddescriptionconfig">Etagiário Sistemas de Informação - APERAM SOUTH AMÉRICA
+                        <br>
+                        <a class="btn fab fa-linkedin-in" href="https://www.linkedin.com/in/vinicius-andrade-lopes" align="center"><i class=""></i></a>
+                        <a class="btn fab fa-github" href="https://github.com/viniciusanl" align="center"><i class=""></i></a>
+                        </p>
                       </div>
                     </div>
                   </div>
@@ -55,7 +72,6 @@
             </div>
           </div>
           <hr>
-        <a href="{% url 'index_view' %}"class="btn btn-primary">Entrar!</a>
       </div>
     </div>
 </body>
