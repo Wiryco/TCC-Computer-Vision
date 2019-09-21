@@ -1,27 +1,45 @@
-#card-principal{
-    margin-top: 1%;
-    margin-bottom: 1%;
-    margin-left: auto;
-    margin-right: auto;
-    width: 90%;
+#card-principal {
+  margin-top: 1%;
+  margin-bottom: 1%;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
 }
 
-#cards-layout{
-    margin-left: auto;
-    margin-right: auto;
-    box-shadow: 9px 7px 5px rgba(50, 50, 50, 0.77);
+#cards-layout {
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 9px 7px 5px rgba(50, 50, 50, 0.77);
 }
 
-#text-layout-principal{
-    text-align: center
+#text-layout-principal {
+  text-align: center;
 }
 
-.logodoctum{
-    margin: -2%;
-    margin-top: -8%;
-    margin-bottom: -8%;
+.configimgdoctum {
+  margin: -2%;
+  margin-top: -2%;
+  margin-bottom: -8%;
+  margin-left: auto;
+  height: inherit;
+  width: unset;
 }
 
-.card-text{
-    text-align: justify;
+#configdivimg {
+  height: 150px;
+  width: 100%;
+  border-radius: 5px;
+}
+
+.card-text {
+  text-align: justify;
+}
+
+#carbodyconfig {
+  background-color: rgb(190, 187, 187);
+}
+
+#carddescriptionconfig {
+  text-align: center;
+  padding-top: inherit;
 }

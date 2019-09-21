@@ -11,24 +11,14 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <body id="bg" style="background-image: url('{% static "images/bg.jpg" %}')">
     <div class="card" id="card-principal">
-      <div class="card-header bg-dark">
-          <img class="logodoctum" src="static/images/doctum-logo-white.png" alt="Logo Rede de Ensino Doctum">
+      <div class="card-header bg-dark" id="configdivimg">
+          <img class="configimgdoctum" src="static/images/doctum-logo-white.png" alt="Logo Rede de Ensino Doctum">
       </div>
       <div class="card-body">
         <h1 class="card-title">TCC - Third Eye </h1>
         <p class="card-text">
-          Mussum Ipsum, cacilds vidis litro abertis. Diuretics paradis num copo 
-          é motivis de denguis. Interagi no mé, cursus quis, vehicula ac nisi. Nec 
-          orci ornare consequat. Praesent lacinia ultrices consectetur. Sed non 
-          ipsum felis. Per aumento de cachacis, eu reclamis.
-          Mussum Ipsum, cacilds vidis litro abertis. Diuretics paradis num copo 
-          é motivis de denguis. Interagi no mé, cursus quis, vehicula ac nisi. Nec 
-          orci ornare consequat. Praesent lacinia ultrices consectetur. Sed non 
-          ipsum felis. Per aumento de cachacis, eu reclamis.
-          Mussum Ipsum, cacilds vidis litro abertis. Diuretics paradis num copo 
-          é motivis de denguis. Interagi no mé, cursus quis, vehicula ac nisi. Nec 
-          orci ornare consequat. Praesent lacinia ultrices consectetur. Sed non 
-          ipsum felis. Per aumento de cachacis, eu reclamis.
+          O objetivo geral deste trabalho é apresentar uma ferramenta que seja capaz de identificar um jogador dentro de campo.
+          Para isso, a identificação será feita através da ferramenta na qual será desenvolvida utilizando visão computacional e a biblioteca de processamento de imagens OpenCV.
         </p>
         <hr>
         <div class="container">
@@ -37,9 +27,9 @@
                 <h2 class="card-text" id="text-layout-principal">Professor Orientador:</h2>
                 <div class="card" id="cards-layout" style="width: 18rem;">
                     <img class="card-img-top" src="static/images/21321981.jpg" alt="Tales Souza">
-                    <div class="card-body">
-                      <h4 class="card-title">Tales Souza</h4>
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <div class="card-body" id="carbodyconfig">
+                      <h4 class="card-title" align="center">Esp. Tales Wallace Souza</h4>
+                      <p class="card-text" id="carddescriptionconfig">Analista de Automação - APERAM SOUTH AMÉRICA</p>
                     </div>
                   </div>
               </div>
@@ -47,20 +37,17 @@
                 <h2 class="card-text">Alunos:</h2>
                 <div class="card-group" id="cards-layout">
                     <div class="card">
-                      <img class="card-img-top" src="static/images/30848464.jpg" alt="Vinicius Andrade">
-                      <div class="card-body">
-                        <h5 class="card-title">Vinicius Andrade</h5>
-                        <p class="card-text">This is a wider card with supporting 
-                          text below as a natural lead-in to additional 
-                          content. This content is a little bit longer.</p>
+                      <img class="card-img-top" src="static/images/27380564.jpg" alt="Thayrone Marques">
+                      <div class="card-body" id="carbodyconfig">
+                        <h5 class="card-title" align="center">THAYRONE MARQUES SILVA</h5>
+                        <p class="card-text" id="carddescriptionconfig">Analista I de Desenvolvimento - TOTVS</p>
                       </div>
                     </div>
                     <div class="card">
-                      <img class="card-img-top" src="static/images/27380564.jpg" alt="Thayrone Marques">
-                      <div class="card-body">
-                        <h5 class="card-title">Thayrone Marques</h5>
-                        <p class="card-text">This card has supporting text below 
-                          as a natural lead-in to additional content.</p>
+                      <img class="card-img-top" src="static/images/30848464.jpg" alt="Vinicius Andrade">
+                      <div class="card-body" id="carbodyconfig">
+                        <h5 class="card-title" align="center">VINÍCIUS ANDRADE LOPES</h5>
+                        <p class="card-text" id="carddescriptionconfig">Etagiário Sistemas de Informação - APERAM SOUTH AMÉRICA</p>
                       </div>
                     </div>
                   </div>
