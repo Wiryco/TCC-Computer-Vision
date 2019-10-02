@@ -1,33 +1,4 @@
-import face_recognition
-import cv2
-
-# This is a demo of running face recognition on a video file and saving the results to a new video file.
-#
-# PLEASE NOTE: This example requires OpenCV (the `cv2` library) to be installed only to read from your webcam.
-# OpenCV is *not* required to use the face_recognition library. It's only required if you want to run this
-# specific demo. If you have trouble installing it, try any of the other demos that don't require it instead.
-
-# Open the input movie file
-input_movie = cv2.VideoCapture("vinicius-video.mp4")
-length = int(input_movie.get(cv2.CAP_PROP_FRAME_COUNT))
-
-# Create an output movie file (make sure resolution/frame rate matches input video!)
-fourcc = cv2.VideoWriter_fourcc(*'XVID')
-output_movie = cv2.VideoWriter('teste.avi', fourcc, 29.97, (640, 360))
-
-# Load some sample pictures and learn how to recognize them.
-lmm_image = face_recognition.load_image_file("vinicius.jpeg")
-lmm_face_encoding = face_recognition.face_encodings(lmm_image)[0]
-
-al_image = face_recognition.load_image_file("wevisky.jpeg")
-al_face_encoding = face_recognition.face_encodings(al_image)[0]
-
-known_faces = [
-    lmm_face_encoding,
-    al_face_encoding
-]
-
-# Initialize some variables
+# Initialize variables
 face_locations = []
 face_encodings = []
 face_names = []
@@ -46,7 +17,7 @@ while True:
     rgb_frame = frame[:, :, ::-1]
 
     # Find all the faces and face encodings in the current frame of video
-    face_locations = face_recognition.face_locations(rgb_frame)
+    face_locations = face_recognition.face_locations(rgb_frame, model="cnn")
     face_encodings = face_recognition.face_encodings(rgb_frame, face_locations)
 
     face_names = []
@@ -54,13 +25,9 @@ while True:
         # See if the face is a match for the known face(s)
         match = face_recognition.compare_faces(known_faces, face_encoding, tolerance=0.50)
 
-        # If you had more than 2 faces, you could make this logic a lot prettier
-        # but I kept it simple for the demo
         name = None
         if match[0]:
-            name = "Lin-Manuel Miranda"
-        elif match[1]:
-            name = "Alex Lacamoire"
+            name = "Phani Srikant"
 
         face_names.append(name)
 
