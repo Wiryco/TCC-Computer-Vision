@@ -12,6 +12,7 @@
 \usepackage{color}
 \usepackage{layouts}
 %\usepackage{float}
+\usepackage{setspace}
 
 \usepackage[dvipsnames*,svgnames]{xcolor}
 \usepackage[most]{tcolorbox}
@@ -27,6 +28,15 @@
 \usepackage{lipsum}				% para geração de dummy text
 % ---
 
+
+%Coloca o titulo Figura em negrito e configura o tamanho das legendas
+\usepackage{caption}
+
+\captionsetup[figure]{labelfont={footnotesize,bf},labelformat={default},labelsep=colon,name={Figura}}
+
+\captionsetup[table]{labelfont={footnotesize,bf},labelformat={default},labelsep=colon,name={Tabela}}
+
+\usepackage[skip=10pt,font=footnotesize]{caption}
 % ---
 % Pacotes de citações
 % ---
@@ -37,7 +47,7 @@
 % CONFIGURAÇÕES DE PACOTES
 % --- 
 \setlrmarginsandblock{3cm}{2cm}{*}
-\setulmarginsandblock{3cm}{2cm}{*}
+\setulmarginsandblock{3cm}{2.5cm}{*}
 \checkandfixthelayout
 
 % ---
