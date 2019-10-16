@@ -1,8 +1,6 @@
 \subsection{Processamento de imagem}
 
-De forma complementar ao assunto supracitado, o processamento de imagem evoluiu drasticamente no decorrer do avanço tecnológico. Portanto, há grande interesse nessa tecnologia pelo fato de proporcionar um grande número de aplicações, como por exemplo o aprimoramento de informações relativo a imagens para interpretação humana e análise automáticas por computador de informações extraídas da imagem capturada.
-
-Contudo, o grande marco da área de processamento de imagens aconteceu no século XX. Com o surgimento dos primeiros computadores digitais com grande capacidade de processamento e o início do programa espacial norte-americano, ocorreu um grande impulso na área de processamento de imagem. O uso de técnicas computacionais de aprimoramento de imagens teve início no \textit{Jet Propulsion Laboratory} (Laboratório de Propulsão a Jato), localizado no centro tecnológico da NASA, em 1964, quando "imagens da lua transmitidas por uma sonda Ranger eram processadas por computador para corrigir vários tipos de distorção inerentes à câmera de TV acoplada à sonda". Essa tecnologia foi usada em grandes expedições tripuladas, como a Apollo \cite{FILHO1999}.
+O grande marco da área de processamento de imagens aconteceu no século XX com o surgimento dos primeiros computadores digitais com grande capacidade de processamento e o início do programa espacial norte-americano, ocorreu um grande impulso na área de processamento de imagem. O uso de técnicas computacionais de aprimoramento de imagens teve início no \textit{Jet Propulsion Laboratory} (Laboratório de Propulsão a Jato), localizado no centro tecnológico da NASA, em 1964, quando "imagens da lua transmitidas por uma sonda Ranger eram processadas por computador para corrigir vários tipos de distorção inerentes à câmera de TV acoplada à sonda". Essa tecnologia foi usada em grandes expedições tripuladas, como a Apollo \cite{FILHO1999}.
 
 Para realizar o processamento de uma imagem, são definidos passos a serem seguidos para a garantia do objetivo final. A captura da imagem consiste no uso de dispositivos físicos sensíveis a espectros de energia eletromagnética que convertem o sinal elétrico para um formato digital. O pré-processamento consiste no realce da imagem para enfatizar características de interesse ou recuperar imagens que sofreram alguma degradação devido à introdução de ruído, perda de contraste ou borramento. A segmentação é a extração ou identificação dos objetos contidos na imagem, separando a imagem em regiões. Por fim, a classificação, é o processo que identifica a imagem observada \cite{GONZALEZ2002}.
 
@@ -34,7 +32,7 @@ A \autoref{fig_rep-pixel-monocromatico} exemplifica a associação dos \textit{p
 	\centering \legend{Fonte: \citeonline{SANTOS2019}}
 \end{figure}
 
-Já as imagens coloridas exigem um poder maior de processamento para serem reconhecidas. Isso ocorre porque as imagens em RGB - \textit{Red, Green, and Blue} (Vermelho, Verde e Azul)  precisam de mais de uma banda para serem processadas, ou seja, são analisadas três matrizes de cores para formar a paleta de cor específica do tom capturado (\autoref{fig_rgb-representacao}). Depois da análise, são formadas as cores distintas que compõe a imagem.
+Já as imagens coloridas exigem um poder maior de processamento para serem reconhecidas. Isso ocorre porque as imagens em RGB - \textit{Red, Green, and Blue} (Vermelho, Verde e Azul)  precisam de mais de uma banda\footnote{Cada matriz ou conjunto de cor diferente é denominado banda de cor. Subconjuntos de três bandas espectrais azul, vermelha e verde compõem uma imagem RGB. Em imagens monocromáticas (Preto e branco), o objeto é representado em apenas uma banda espectral \cite{CROSTA1999}. \label{Banda-de-Cor}} para serem processadas, ou seja, são analisadas três matrizes de cores para formar a paleta de cor específica do tom capturado (\autoref{fig_rgb-representacao}). Depois da análise, são formadas as cores distintas que compõe a imagem.
 
 \begin{figure}[h]
 	\caption{\label{fig_rgb-representacao}Matriz de \textit{pixels} RGB.}
@@ -49,11 +47,11 @@ De forma mais detalhada, \citeonline{LOPES2013} exemplificam que imagens colorid
 \begin{figure}[h]
 	\caption{\label{fig_rep-pixel-rgb}Imagem digital em tons coloridos (\textit{pixels} RGB).}
 	\begin{center}
-		\includegraphics[scale=0.7]{4-Conteudo-Bibliografico/2-Visao-Computacional/Imagens-Visao-Computacional/repr-pixel-rgb.jpg}
+		\resizebox{.6\linewidth}{!}{\includegraphics{4-Conteudo-Bibliografico/2-Visao-Computacional/Imagens-Visao-Computacional/repr-pixel-rgb.jpg}}
 	\end{center}
 	\centering \legend{Disponível em: https://apenasimagens.com/pt/pixel-imagem-digital/}
 \end{figure}
 
 No entanto, a imagem capturada por algum dispositivo eletrônico pode chegar de forma irregular ate a parte de processamento. Essas falhas podem ser caracterizadas de várias formas, como por exemplo a presença de \textit{pixels} ruidosos, brilho e/ou contrastes desregulados, caracteres com dígitos incompletos ou apagados como em digitalizações de documentos.
 
-A parte de processamento fica responsável por elaborar uma melhoria da imagem em questão, ajustando todos os parâmetros para que seja possível analisar precisamente todas as informações que estão disponíveis no arquivo de imagem. Sendo assim, por analogia as imagens processadas, trata-se de uma etapa que analisa de forma profunda todos os dados contidos na imagem, ou seja, a fase de processamento abrange os níveis mais baixos de análise de imagens, pois trabalham diretamente com valores de intensidade dos \textit{pixels}, visto que neste período não existe nenhuma informação relacionada a imagem para que seja possível facilitar o trabalho. O resultado desse processo gera imagens digitalizadas de qualidade melhor que a original.
+A parte de processamento fica responsável por elaborar uma melhoria da imagem em questão, ajustando todos os parâmetros para que seja possível analisar precisamente todas as informações que estão disponíveis no arquivo de imagem. Sendo assim, por analogia as imagens processadas, trata-se de uma etapa que analisa de forma profunda todos os dados contidos na imagem, ou seja, a fase de processamento abrange os níveis mais baixos de análise de imagens, pois trabalham diretamente com valores de intensidade dos \textit{pixels}, visto que neste período não existe nenhuma informação relacionada a imagem para que seja possível facilitar o trabalho.

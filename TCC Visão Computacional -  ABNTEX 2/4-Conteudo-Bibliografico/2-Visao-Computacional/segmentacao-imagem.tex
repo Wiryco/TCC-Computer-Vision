@@ -1,10 +1,8 @@
 \subsubsection{\textit{Segmentação de imagens}}
 
-De forma a dar continuidade ao ciclo de processamento de imagem e verificação desta, usa-se métodos de \textit{pixels} e tonalidades seguindo os padrões propostos. A análise deve prosseguir de forma minuciosa para então, processar seus detalhes.
+De forma a dar continuidade ao ciclo de processamento de imagem e verificação desta, a segmentação veio para aprimorar a parte de processamento, auxiliando na detecção de maiores detalhes e reduzindo tempo de processamento. Isso ocorre porque a segmentação é a área que tem por responsabilidade dividir a imagem em várias partes significativas, separando as áreas de interesse dentro desta \cite{FILHO1999}.
 
-A segmentação veio para aprimorar a parte de processamento, auxiliando na detecção de maiores detalhes e reduzindo tempo de processamento. Isso ocorre porque a segmentação é a área que tem por responsabilidade dividir a imagem em várias partes significativas, separando as de interesse dentro desta \cite{FILHO1999}.
-
-No entanto, a segmentação exige um processamento muito grande para analisar a imagem sugerida. Sendo assim, o nível no qual será feito essa subdivisão de imagem depende muito da ocasião e do problema que está sendo proposto para resolver. De acordo com \citeonline{GONZALEZ2002}, para não ocorrer perca desnecessária de processamento e, consequentemente, perda de tempo, a segmentação deve parar assim que os objetos de interesse da aplicação forem isolados.
+No entanto, a segmentação exige um poder de processamento muito grande do \textit{hardware} para que a análise da imagem sugerida seja feita. Sendo assim, o nível no qual será feito essa subdivisão de imagem depende muito da ocasião e do problema que está sendo proposto para resolver. De acordo com \citeonline{GONZALEZ2002}, para não ocorrer perca desnecessária de processamento e, consequentemente, perda de tempo, a segmentação deve parar assim que os objetos de interesse da aplicação forem isolados.
 
 Portanto, dentro da segmentação existem métodos que podem ser seguidos a fim de analisar detalhadamente cada figura. Segundo \citeonline{MORGAN2008}, as classificações dos métodos utilizados na segmentação são definidos como interativos ou automáticos. Basicamente, a diferença entre os dois são bem simples: um é executado através de intervenções humanas e o outro não.
 
@@ -26,12 +24,18 @@ A \autoref{fig_metodo-de-borda} mostra como funciona uma análise baseada no mé
 	\centering \legend{Fonte: \citeonline{FREITAS2016}}
 \end{figure}
 
-Conforme \citeonline{MORGAN2008} enfatiza em seu artigo, o método orientado a regiões é dividido em três abordagens relevantes: classificação por \textit{pixel}, agregação de \textit{pixel} e \textit{split-and-merge} (Divisão e conquista).
+Conforme \citeonline{MORGAN2008} enfatiza em seu artigo, o método orientado a regiões é dividido em três abordagens relevantes:
+
+\begin{itemize}
+   \item Classificação por \textit{pixel}.
+   \item Agregação de \textit{pixel}.
+   \item \textit{Split-and-merge} (Divisão e conquista).
+ \end{itemize}
 
 A descrever cada uma das abordagens de forma didática, a classificação por \textit{pixel} nada mais é que a identificação de características presentes na imagem como, por exemplo, cor, texturas, a fim de classificar os \textit{pixels} de acordo com as várias possibilidades de classes ou objetos da imagem.
 
-Na abordagem de agregação por \textit{pixel} o objetivo é encontrar um \textit{pixel} dentro da imagem e, a partir desse \textit{pixel}, ocorre o crescimento de regiões conexas. O desenvolvimento das regiões acontece ate alcançar o critério de parada do crescimento, onde estará representado um objeto dentro da imagem.
+Na abordagem de agregação por \textit{pixel} o objetivo é encontrar um \textit{pixel} dentro da imagem e, a partir desse \textit{pixel}, ocorre o crescimento de regiões conexas. O desenvolvimento das regiões acontece até alcançar o critério de parada do crescimento, onde estará representado um objeto dentro da imagem.
 
-Já a segmentação utilizando a bordagem \textit{split-and-merge} é mais complexa. Segundo \citeonline{VENTURA2009}, ao aplicar essa abordagem de segmentação, o objetivo final consiste em conseguir subdividir a imagem em vários quadrantes que satisfaça uma prioridade. Apos a concretização desta tarefa, realiza-se a verificação de cada quadrante, observando se este atende ou não a prioridade definida. Caso o quadrante não satisfaça a prioridade, a subdivisão acontece novamente em busca de outros quadrantes.
+Já a segmentação utilizando a bordagem \textit{split-and-merge} é mais complexa. Segundo \citeonline{VENTURA2009}, ao aplicar essa abordagem de segmentação, o objetivo final consiste em conseguir subdividir a imagem em vários quadrantes que satisfaça uma prioridade. Após a concretização desta tarefa, realiza-se a verificação de cada quadrante, observando se este atende ou não a prioridade definida. Caso o quadrante não satisfaça a prioridade, a subdivisão acontece novamente em busca de outros quadrantes.
 
 Por fim, o processo de fusão é realizado, acontecendo então o agrupamento das partes similares, ou seja, que atende as prioridades definidas. Esse processo só finaliza quando não existe nenhuma possibilidade de realizar divisões ou agrupamentos.
