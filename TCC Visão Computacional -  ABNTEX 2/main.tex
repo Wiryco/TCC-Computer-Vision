@@ -65,20 +65,21 @@
 % Possibilita criação de Quadros e Lista de quadros.
 % Ver https://github.com/abntex/abntex2/issues/176
 %
-\newcommand{\quadroname}{Quadro}
-\newcommand{\listofquadrosname}{Lista de quadros}
+% \newcommand{\quadroname}{Quadro}
+% \newcommand{\listofquadrosname}{Lista de quadros}
 
-\newfloat[chapter]{quadro}{loq}{\quadroname}
-\newlistof{listofquadros}{loq}{\listofquadrosname}
-\newlistentry{quadro}{loq}{0}
+% \newfloat[chapter]{quadro}{loq}{\quadroname}
+% \newlistof{listofquadros}{loq}{\listofquadrosname}
+% \newlistentry{quadro}{loq}{0}
 
 % configurações para atender às regras da ABNT
-\setfloatadjustment{quadro}{\centering}
-\counterwithout{quadro}{chapter}
-\renewcommand{\cftquadroname}{\quadroname\space} 
-\renewcommand*{\cftquadroaftersnum}{\hfill--\hfill}
+% \setfloatadjustment{quadro}{\centering}
+% \counterwithout{quadro}{chapter}
+% \renewcommand{\cftquadroname}{\quadroname\space} 
+% \renewcommand*{\cftquadroaftersnum}{\hfill--\hfill}
 
-\setfloatlocations{quadro}{hbtp} % Ver https://github.com/abntex/abntex2/issues/176
+% \setfloatlocations{quadro}{hbtp} 
+% Ver https://github.com/abntex/abntex2/issues/176
 % ---
 
 % --- 
@@ -307,9 +308,9 @@
 \begin{apendicesenv}
 % Imprime uma página indicando o início dos apêndices
 \partapendices
-% ----------------------------------------------------------
+% -------------------------------------------------
 \input{Apendice/apendice-teste.tex}
-% ----------------------------------------------------------
+% -------------------------------------------------
 
 \end{apendicesenv}
 % ---
@@ -326,7 +327,6 @@
 
 % Imprime uma página indicando o início dos anexos
 \partanexos
-
 %-------------------------------------------------------------
 \input{Anexos/anexo-teste.tex}
 %-------------------------------------------------------------

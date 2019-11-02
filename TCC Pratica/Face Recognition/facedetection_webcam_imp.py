@@ -8,16 +8,16 @@ video_capture = cv2.VideoCapture(0)
 vinicius_img = face_recognition.load_image_file("vinicius.jpeg")
 vinicius_encoding = face_recognition.face_encodings(vinicius_img)[0]
 
-wevisky_img = face_recognition.load_image_file("harry.jpg")
-wevirky_encoding = face_recognition.face_encodings(wevisky_img)[0]
+wevisky_img = face_recognition.load_image_file("wevisky.jpeg")
+wevisky_encoding = face_recognition.face_encodings(wevisky_img)[0]
 
 known_face_encodings = [
     vinicius_encoding,
-    wevirky_encoding
+    wevisky_encoding
 ]
 known_face_names = [
     "Vinicius",
-    "Daniel Radcliffe"
+    "Wevisky"
 ]
 
 def FaceTrue():
