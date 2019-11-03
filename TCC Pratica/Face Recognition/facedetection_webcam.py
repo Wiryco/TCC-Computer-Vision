@@ -8,17 +8,20 @@ vinicius_img = face_recognition.load_image_file("vinicius.jpeg")
 vinicius_encoding = face_recognition.face_encodings(vinicius_img)[0]
 
 wevisky_img = face_recognition.load_image_file("wevisky.jpeg")
-wevirky_encoding = face_recognition.face_encodings(wevisky_img)[0]
+wevisky_encoding = face_recognition.face_encodings(wevisky_img)[0]
 
 known_face_encodings = [
     vinicius_encoding,
-    wevirky_encoding
+    wevisky_encoding
 ]
 
 known_face_names = [
     "Vinicius",
     "Wevisky"
 ]
+
+def MostraIMG(imagem):
+    cv2.imshow("Detected", imagem)
 
 def FaceTrue():
     cv2.rectangle(frame, (left, top), (right, bottom), (0, 255, 0), 2);
@@ -56,6 +59,7 @@ while True:
             name = known_face_names[best_match_index];
             FaceTrue();
             Printar(name);
+            MostraIMG(frame);
         else:
             FaceFalse();
             Printar(name);
