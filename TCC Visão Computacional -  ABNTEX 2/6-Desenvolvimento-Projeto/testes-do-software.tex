@@ -76,17 +76,28 @@ A \autoref{fig_rep_jogador_em_movimento_1} e \autoref{fig_rep_jogador_em_movimen
 	\centering \legend{Fonte: Elaborada pelos autores.}
 \end{figure}
 
-
-A \autoref{fig_rep_jogador_em_movimento_2} representa basicamente o desempenho do algoritmo ao analisar o \textit{frame} do vídeo e identificar mais de um jogador de futebol americano dentro de campo. Como pode ser visto, o algoritmo conseguiu reconhecer dois jogadores dentro do \textit{frame} do vídeo, no entanto ele ainda não conseguiu identificar o restante. Nessa ocasião em específico, o algoritmo não seguiu com a identificação dos dois jogadores por um período longo e nem curto, pois ele “se perde” nas características e permanece identificando apenas um jogador.
+Após a análise do \textit{frame} do vídeo representado pela \autoref{fig_rep_jogador_em_movimento_1}, no qual ele captura um movimento do jogador de futebol americano, foi feito a mesma análise utilizando o algoritmo que analisa imagens estáticas. A \autoref{fig_rep_erro} mostra que, dependendo da situação de movimento do jogador, o algoritmo não o reconhece, e sim reconhece o seu movimento. Isso ocorre porque a maioria das imagens que foram utilizadas para treinar o algoritmo continha jogadores de futebol americano em suas devidas situações dentro de campo, ou seja, os jogadores estavam correndo, em ataque, em disputa de bola e em várias outras situações de jogo. Sendo assim, os movimentos dos jogadores de futebol americano dentro de cambo também é um fator de análise do algoritmo e, consequentemente, é algo que pode interferir na identificação do mesmo.
 
 \begin{figure}[ht]
-	\caption{\label{fig_rep_jogador_em_movimento_2}Identificação de dois jogadores de futebol americano dentro de campo.}
+	\caption{\label{fig_rep_erro}Identificação do movimento de um jogador de futebol americano.}
 	\begin{center}
-		\resizebox{.8\linewidth}{!}{\includegraphics{6-Desenvolvimento-Projeto/imagens_teste/dois_jogadores_detectados.png}}
+		\resizebox{.7\linewidth}{!}{\includegraphics{6-Desenvolvimento-Projeto/imagens_teste/erro_algoritmo.png}}
 	\end{center}
 	\centering \legend{Fonte: Elaborada pelos autores.}
 \end{figure}
 
+
+A \autoref{fig_rep_dois_jogadores} representa basicamente o desempenho do algoritmo ao analisar o \textit{frame} do vídeo e identificar mais de um jogador de futebol americano dentro de campo. Como pode ser visto, o algoritmo conseguiu reconhecer dois jogadores dentro do \textit{frame} do vídeo, no entanto ele ainda não conseguiu identificar o restante. Nessa ocasião em específico, o algoritmo não seguiu com a identificação dos dois jogadores por um período longo e nem curto, pois ele “se perde” nas características e permanece identificando apenas um jogador.
+
+\begin{figure}[ht]
+	\caption{\label{fig_rep_dois_jogadores}Identificação de dois jogadores de futebol americano dentro de campo.}
+	\begin{center}
+		\resizebox{.7\linewidth}{!}{\includegraphics{6-Desenvolvimento-Projeto/imagens_teste/dois_jogadores_detectados.png}}
+	\end{center}
+	\centering \legend{Fonte: Elaborada pelos autores.}
+\end{figure}
+
+Já na \autoref{fig_rep_acessorios} podemos notar que o algoritmo não detectou nenhum jogador de futebol americano no \textit{frame} do vídeo. No entanto, como pode ser visto, o algoritmo conseguiu identificar alguns detalhes no uniforme dos jogadores. Isso ocorreu porque a variação de temperatura de cor naquela região atendeu aos padrões de características extraídas das imagens de treino que foram utilizadas para gerar o modelo de busca. Dessa forma, o algoritmo entendeu que, nesse \textit{frame} em especifico, os pontos de maior interesse que tem semelhança com o modelo de busca são os identificados na imagem.
 
 \begin{figure}[ht]
 	\caption{\label{fig_rep_acessorios}Identificação dos detalhes do uniforme de um jogador de futebol americano.}
@@ -96,7 +107,9 @@ A \autoref{fig_rep_jogador_em_movimento_2} representa basicamente o desempenho d
 	\centering \legend{Fonte: Elaborada pelos autores.}
 \end{figure}
 
-Já na \autoref{fig_rep_acessorios} podemos notar que o algoritmo não detectou nenhum jogador de futebol americano no \textit{frame} do vídeo. No entanto, como pode ser visto, o algoritmo conseguiu identificar alguns detalhes no uniforme dos jogadores. Isso ocorreu porque a variação de temperatura de cor naquela região atendeu aos padrões de características extraídas das imagens de treino utilizadas para gerar o modelo de busca. Dessa forma, o algoritmo entendeu que, nesse \textit{frame} em especifico, os pontos de maior interesse que tem semelhança com o modelo de busca são os identificados na imagem.
+Outro fator muito interessante a ser analisado é a identificação feita pelo algoritmo na \autoref{fig_rep_arbitro}. Como pode ser visto, o sistema identificou o árbitro dentro de campo, e não  um dos jogadores de futebol americano. Essa situação foi bastante inusitada, pois não foi alterado nenhum parâmetro de busca e o modelo de busca também não foi alterado. Sendo assim, com base na \autoref{fig_rep_acessorios} e \autoref{fig_rep_arbitro}, pode-se concluir que a diferença de tonalidade dos uniformes também é um parâmetro que o algoritmo leva em consideração para realizar o processamento de imagem.
+
+\clearpage
 
 \begin{figure}[ht]
 	\caption{\label{fig_rep_arbitro}Reconhecimento do árbitro dentro de campo.}
@@ -106,10 +119,12 @@ Já na \autoref{fig_rep_acessorios} podemos notar que o algoritmo não detectou 
 	\centering \legend{Fonte: Elaborada pelos autores.}
 \end{figure}
 
+A \autoref{fig_processamento_maquina}  representa o consumo de \textit{hardware} quando executamos o algoritmo para realizar a análise de um vídeo. Como pode ser visto, o \textit{software} requer muito poder de processamento da máquina, consumindo grande parte dos seus recursos.  Vale lembrar que este teste foi bem simples e mostra superficialmente os recursos necessários para a execução do algoritmo. Na \autoref{novos_estudos} foi sugerido um estudo mais avançado sobre esse consumo de \textit{hardware}.
+
 \begin{figure}[ht]
 	\caption{\label{fig_processamento_maquina}Representação do processamento da máquina.}
 	\begin{center}
-		\resizebox{.8\linewidth}{!}{\includegraphics{6-Desenvolvimento-Projeto/imagens_teste/processamento_maquina.png}}
+		\resizebox{.7\linewidth}{!}{\includegraphics{6-Desenvolvimento-Projeto/imagens_teste/processamento_maquina.png}}
 	\end{center}
 	\centering \legend{Fonte: Elaborada pelos autores.}
 \end{figure}
