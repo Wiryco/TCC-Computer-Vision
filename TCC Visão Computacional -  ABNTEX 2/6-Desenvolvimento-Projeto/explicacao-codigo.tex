@@ -4,7 +4,7 @@
 
 Antes de explicar o código por trás do desenvolvimento deste projeto, é preciso informar que para executá-lo é necessário instalar a linguagem de programação \textit{Python} e suas dependências.
 
-Para iniciar a codificação do algoritmo em \textit{Python}, é importante realizar a importações das bibliotecas necessárias para realizar o procedimento de reconhecimento. A biblioteca \textit{cv2} é a \textit{OpenCV}; a \textit{NumPy} fica responsável por realizar cálculos de vetores multidimensionais; a \textit{argparse} verifica e atribui os argumentos que são esperados; já a \textit{imutils} é responsável por converter a imagem em uma matriz.
+Para iniciar a codificação do algoritmo em \textit{Python}, é importante realizar as importações das bibliotecas necessárias para realizar o procedimento de reconhecimento. A biblioteca \textit{cv2} é a \textit{OpenCV}; a \textit{NumPy} fica responsável por realizar cálculos de vetores multidimensionais; a \textit{argparse} verifica e atribui os argumentos que são esperados; já a \textit{imutils} é responsável por converter a imagem em uma matriz.
 
 \begin{minted}[linenos=true, mathescape, bgcolor=cinza]{python}
 
@@ -45,7 +45,7 @@ hog.setSVMDetector(cv2.HOGDescriptor_getDefaultPeopleDetector())
 
 \end{minted}
 
-Para o melhor desempenho do algoritmo, foi criado uma pasta local contendo todas as imagens necessárias para realizar a extração dos padrões de características dos jogadores de futebol americano. Sendo assim, o trecho de código a seguir serve para ler todas estas imagens que estão dentro da pasta \textit{images} localmente.
+Para o melhor desempenho do algoritmo, foi criado uma pasta local contendo todas as imagens necessárias para realizar a extração dos padrões de características dos jogadores de futebol americano. Sendo assim, o trecho de código a seguir é útil na leitura de todas estas imagens que estão dentro da pasta \textit{images} localmente.
 
 \begin{minted}[linenos=true, mathescape, bgcolor=cinza]{python}
 
@@ -75,7 +75,7 @@ Em seguida, ele tenta detectar se existe uma pessoa na imagem analisada.
 
 \end{minted}
 
-Apos isso, a segunda estrutura de repetição que está alocada dentro da primeira, fica responsável por delimita os locais onde contem os pontos de interesse dentro da imagem analisada, ou seja, o algoritmo seleciona as áreas de interesse que serão utilizadas como parâmetro de busca.
+Após isso, a segunda estrutura de repetição que está alocada dentro da primeira, fica responsável por delimitar os locais onde contém os pontos de interesse dentro da imagem analisada, ou seja, o algoritmo seleciona as áreas de interesse que serão utilizadas como parâmetro de busca.
 
 \begin{minted}[linenos=true, mathescape, bgcolor=cinza]{python}
 

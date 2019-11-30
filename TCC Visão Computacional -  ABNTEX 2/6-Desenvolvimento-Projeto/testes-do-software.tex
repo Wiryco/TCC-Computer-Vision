@@ -1,8 +1,8 @@
 \section{\textbf{Testes e análises do \textit{software}}}
 \label{testes_do_software}
-O \textit{software} criado no decorrer deste projeto é uma simples ideia de como usar técnicas de visão computacional aplicadas no reconhecimento de um jogador de futebol americano. Para exemplificar a usabilidade e os pontos fortes das técnicas utilizadas durante o desenvolvimento do mesmo, foram criadas várias situações para testar o desemprenho do algoritmo. Sendo assim, as figuras a seguir representam os testes feitos com o sistema desenvolvido.
+O \textit{software} criado no decorrer deste projeto é uma simples ideia de como usar técnicas de visão computacional aplicadas no reconhecimento de um jogador de futebol americano. Para exemplificar a usabilidade e os pontos fortes das técnicas utilizadas durante o desenvolvimento do mesmo, foram criadas várias situações para testar o desempenho do algoritmo. Sendo assim, as figuras a seguir representam os testes feitos com o sistema desenvolvido.
 
-Inicialmente, o algoritmo foi testado em um cenário com imagens estáticas, como pode ser visto na \autoref{fig_comparativo_img} e \autoref{fig_rec_numero}, no qual ele analisa esta imagem, extraindo todos os seus padrões de características. Em seguida, ele realiza uma busca por similaridade na mesma imagem onde podemos notar, com maior evidência na  \autoref{fig_comparativo_img}, que mesmo ele cometendo alguns erros na parte de extração de características, a etapa de aprendizado de máquina entende os padrões e realiza  um balanceamento de quais característica são interessantes para serem levadas em consideração na hora de montar um modelo de busca. As características de menor interesse são dispensadas para reduzir a probabilidade do algoritmo cometer erros.
+Inicialmente, o algoritmo foi testado em um cenário com imagens estáticas, como pode ser visto na \autoref{fig_comparativo_img} e \autoref{fig_rec_numero}, no qual ele analisa esta imagem, extraindo todos os seus padrões de características. Em seguida, ele realiza uma busca por similaridade na mesma imagem onde podemos notar, com maior evidência na  \autoref{fig_comparativo_img}, que mesmo ele cometendo alguns erros na parte de extração de características, a etapa de aprendizado de máquina entende os padrões e realiza um balanceamento de quais característica são interessantes para serem levadas em consideração na hora de montar um modelo de busca. As características de menor interesse são dispensadas para reduzir a probabilidade do algoritmo cometer erros.
 
 \begin{figure}[ht]
 	\caption{\label{fig_rec_numero}A imagem (A) representa os pontos de interesse encontrados nos números das camisas dos jogadores. A imagem (B) a sua identificaç ão.}
@@ -12,7 +12,7 @@ Inicialmente, o algoritmo foi testado em um cenário com imagens estáticas, com
 	\centering \legend{Fonte: Elaborada pelos autores.}
 \end{figure}
 
-Em seguida, o algoritmo foi colocado em um cenário de análise de vídeo de uma partida de futebol americano. Nas etapas a seguir, o algoritmo utiliza o modelo de busca já treinado para identificar um jogador de futebol americano dentro de campo. Ou seja, não foi realizado nenhuma extração de característica de imagem, somente a técnica de busca por similaridade.
+Em seguida, o algoritmo foi colocado em um cenário de análise de vídeo de uma partida de futebol americano. Nas etapas a seguir, o algoritmo utiliza o modelo de busca já treinado para identificar um jogador de futebol americano dentro de campo. Ou seja, não foi realizada nenhuma extração de característica de imagem, somente a técnica de busca por similaridade.
 
 
 \begin{figure}[ht]
@@ -25,9 +25,9 @@ Em seguida, o algoritmo foi colocado em um cenário de análise de vídeo de uma
 
 A \autoref{fig_rep_jogador_em_campo} foi retirada de um vídeo de uma partida de futebol americano. O algoritmo analisou \textit{frame} a \textit{frame} do vídeo para realizar a busca por similaridade seguindo o modelo de busca já treinado. Com base nessas informações, pode-se notar que o \textit{software} realizou uma leitura dos jogadores de futebol americano e identificou o jogador que mais se aproxima das características contidas no modelo de busca.
 
-Outro fator que pode ser visto na \autoref{fig_rep_jogador_em_campo} é que o algoritmo identificou somente um jogador na cena analisada. Isso ocorre porque o comportamento seguido pelo \textit{software} e de analisar o jogador por inteiro e compará-lo com os padrões de características do modelo de busca, analisando também a sua fisionomia. Sendo assim, os outros jogadores podem ter atendido a algum ponto de característica contido dentro do modelo de busca, porém, aquele jogador identificado é o que mais se assimila ao modelo e por isso que ele foi identificado na cena.
+Outro fator que pode ser visto na \autoref{fig_rep_jogador_em_campo} é que o algoritmo identificou somente um jogador na cena analisada. Isso ocorre porque o comportamento seguido pelo \textit{software} e de analisar o jogador por inteiro e compará-lo com os padrões de características do modelo de busca, analisando também a sua fisionomia. Sendo assim, os outros jogadores podem ter atendido algum ponto de característica contido dentro do modelo de busca, porém, aquele jogador identificado é o que mais se assimila ao modelo e por isso ele foi identificado na cena.
 
-Já na figura \autoref{fig_rep_jogador_mais_evidente} mostra a identificação do jogador mais evidente no ponto de vista do algoritmo. Como pode ser visto, no meio de uma jogada de futebol americano, o jogador que mais se encaixou nos padrões de características do modelo de busca foi identificado. Novamente, como citado na análise da \autoref{fig_rep_jogador_em_campo}, o algoritmo identificou somente um jogador dentre os demais, pois ele é o que mais se encaixa no modelo de busca.
+Já a figura \autoref{fig_rep_jogador_mais_evidente} mostra a identificação do jogador mais evidente no ponto de vista do algoritmo. Como pode ser visto, no meio de uma jogada de futebol americano, o jogador que mais se encaixou nos padrões de características do modelo de busca foi identificado. Novamente, como citado na análise da \autoref{fig_rep_jogador_em_campo}, o algoritmo identificou somente um jogador dentre os demais, pois ele é o que mais se encaixa no modelo de busca.
 
 \begin{figure}[ht]
 	\caption{\label{fig_rep_jogador_mais_evidente}Identificação do jogador mais evidente.}
@@ -49,7 +49,7 @@ Da mesma forma, a \autoref{fig_rep_jogador_em_movimento} representa a identifica
 	\centering \legend{Fonte: Elaborada pelos autores.}
 \end{figure}
 
-A \autoref{fig_rep_jogador_em_jogada} representa um jogador em uma velocidade mais alta do que o da \autoref{fig_rep_jogador_em_movimento}. Isso ocorreu devido a um lance que exigiu mais condicionamento físico do jogador de futebol americano. Mesmo nesse cenário, o algoritmo também foi capaz de identificar e perseguir o jogador dentro de campo por um intervalo de tempo. No entanto, o algoritmo teve um pouco mais de dificuldade para capturar todos os movimentos e realizar a identificação do  jogador devido o seu excesso de velocidade, não sendo possível persegui-lo durante um bom tempo ou ate mesmo quando entra em contato com o seu adversário.
+A \autoref{fig_rep_jogador_em_jogada} representa um jogador em uma velocidade mais alta do que o da \autoref{fig_rep_jogador_em_movimento}. Isso ocorreu devido a um lance que exigiu mais condicionamento físico do jogador de futebol americano. Mesmo nesse cenário, o algoritmo também foi capaz de identificar e perseguir o jogador dentro de campo por um intervalo de tempo. No entanto, o algoritmo teve um pouco mais de dificuldade para capturar todos os movimentos e realizar a identificação do  jogador devido o seu excesso de velocidade, não sendo possível persegui-lo durante um bom tempo ou até mesmo quando entra em contato com o seu adversário.
 
 %\clearpage
 
@@ -81,7 +81,7 @@ A \autoref{fig_rep_jogador_em_movimento_1} e \autoref{fig_rep_jogador_em_movimen
 	\centering \legend{Fonte: Elaborada pelos autores.}
 \end{figure}
 
-Após a análise do \textit{frame} do vídeo representado pela \autoref{fig_rep_jogador_em_movimento_1}, no qual ele captura um movimento do jogador de futebol americano, foi feito a mesma análise utilizando o algoritmo que analisa imagens estáticas. A \autoref{fig_rep_erro} mostra que, dependendo da situação de movimento do jogador, o algoritmo não o reconhece, e sim reconhece o seu movimento. Isso ocorre porque a maioria das imagens que foram utilizadas para treinar o algoritmo continha jogadores de futebol americano em suas devidas situações dentro de campo, ou seja, os jogadores estavam correndo, em ataque, em disputa de bola e em várias outras situações de jogo. Sendo assim, os movimentos dos jogadores de futebol americano dentro de cambo também é um fator de análise do algoritmo e, consequentemente, é algo que pode interferir na identificação do mesmo.
+Após a análise do \textit{frame} do vídeo representado pela \autoref{fig_rep_jogador_em_movimento_1}, no qual ele captura um movimento do jogador de futebol americano, foi realizada a mesma análise utilizando o algoritmo que analisa imagens estáticas. A \autoref{fig_rep_erro} mostra que, dependendo da situação de movimento do jogador, o algoritmo não o reconhece, e sim reconhece o seu movimento. Isso ocorre porque a maioria das imagens que foram utilizadas para treinar o algoritmo continha jogadores de futebol americano em suas devidas situações dentro de campo, ou seja, os jogadores estavam correndo, em ataque, em disputa de bola e em várias outras situações de jogo. Sendo assim, os movimentos dos jogadores de futebol americano dentro de cambo também é um fator de análise do algoritmo e, consequentemente, é algo que pode interferir na identificação do mesmo.
 
 \begin{figure}[ht]
 	\caption{\label{fig_rep_erro}Identificação do movimento de um jogador de futebol americano.}
@@ -102,7 +102,7 @@ A \autoref{fig_rep_dois_jogadores} representa basicamente o desempenho do algori
 	\centering \legend{Fonte: Elaborada pelos autores.}
 \end{figure}
 
-Já na \autoref{fig_rep_acessorios} podemos notar que o algoritmo não detectou nenhum jogador de futebol americano no \textit{frame} do vídeo. No entanto, como pode ser visto, o algoritmo conseguiu identificar alguns detalhes no uniforme dos jogadores. Isso ocorreu porque a variação de temperatura de cor naquela região atendeu aos padrões de características extraídas das imagens de treino que foram utilizadas para gerar o modelo de busca. Dessa forma, o algoritmo entendeu que, nesse \textit{frame} em especifico, os pontos de maior interesse que tem semelhança com o modelo de busca são os identificados na imagem.
+Já na \autoref{fig_rep_acessorios} podemos notar que o algoritmo não detectou nenhum jogador de futebol americano no \textit{frame} do vídeo. No entanto, como pode ser visto, o algoritmo conseguiu identificar alguns detalhes no uniforme dos jogadores. Isso ocorreu porque a variação de temperatura de cor naquela região atendeu aos padrões de características extraídas das imagens de treino que foram utilizadas para gerar o modelo de busca. Dessa forma, o algoritmo entendeu que, nesse \textit{frame} em específico, os pontos de maior interesse que possuem semelhança com o modelo de busca são os identificados na imagem.
 
 \begin{figure}[ht]
 	\caption{\label{fig_rep_acessorios}Identificação dos detalhes do uniforme de um jogador de futebol americano.}
