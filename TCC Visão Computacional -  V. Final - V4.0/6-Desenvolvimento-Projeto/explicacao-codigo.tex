@@ -1,0 +1,174 @@
+\section{\textbf{Explicando o código}}
+\label{explicacao-codigo}
+\definecolor{cinza}{rgb}{0.85,0.85,0.85}
+%\numberwithin{listing}{section}
+
+% Antes de explicar o código por trás do desenvolvimento deste projeto, é preciso informar que para executá-lo é necessário instalar a linguagem de programação \textit{Python} e suas dependências.
+
+Para iniciar a codificação do algoritmo em \textit{Python}, é necessário realizar as importações das bibliotecas necessárias para realizar o procedimento de reconhecimento. A biblioteca \textit{cv2} é a \textit{OpenCV}; a \textit{NumPy} fica responsável por realizar cálculos de vetores multidimensionais; a \textit{argparse} verifica e atribui os argumentos que são esperados; já a \textit{imutils} é responsável por converter a imagem em uma matriz (\autoref{codigo1}).
+
+\begin{listing}[ht]
+\caption{\label{codigo1}Importação de bibliotecas.}
+\begin{minted}[linenos=true, breaklines=true, mathescape, bgcolor=cinza, breaklines, frame=single]{python}
+
+import cv2
+import numpy as np
+import argparse
+import imutils
+
+\end{minted}
+\end{listing}
+
+Também é necessário importar os módulos da biblioteca \textit{imutils} (\autoref{codigo2}).
+
+%\clearpage
+
+\begin{listing}[ht]
+\caption{\label{codigo2}Importação de modulos.}
+\begin{minted}[linenos=true, breaklines=true, mathescape, bgcolor=cinza, breaklines, frame=single]{python}
+
+from __future__ import print_function
+from imutils.object_detection import non_max_suppression
+from imutils import paths
+
+\end{minted}
+\end{listing}
+
+Em seguida, o algoritmo deve ser programado para construir os argumentos necessários para iniciar o reconhecimento e analisar esses argumentos (\autoref{codigo3}).
+
+\clearpage
+
+\begin{listing}[ht]
+\caption{\label{codigo3}Argumentos de reconhecimento.}
+\begin{minted}[linenos=true, breaklines=true, mathescape, bgcolor=cinza, breaklines, frame=single]{python}
+
+ap = argparse.ArgumentParser()
+ap.add_argument("-i", "--images", required=True,
+    help="path to images directory")
+args = vars(ap.parse_args())
+
+\end{minted}
+\end{listing}
+
+Agora é necessário iniciar o descritor \textit{HOG - Histogram of Oriented Gradients} (Histograma de Gradientes Orientados) (\autoref{codigo4}). Basicamente, o \textit{HOG} utiliza cálculos matemáticos complexos que serve para o reconhecimento de padrões e processamento de imagem, obtendo assim um conjunto robusto de características das imagens analisadas.
+
+\begin{listing}[ht]
+\caption{\label{codigo4}Descritor \textit{HOG - Histogram of Oriented Gradients}.}
+\begin{minted}[linenos=true, breaklines=true, mathescape, bgcolor=cinza, breaklines, frame=single]{python}
+
+hog = cv2.HOGDescriptor()
+hog.setSVMDetector(cv2.HOGDescriptor_getDefaultPeopleDetector())
+
+\end{minted}
+\end{listing}
+
+Em sequência, foi criado uma pasta local contendo todas as imagens necessárias para realizar a extração dos padrões de características dos jogadores de futebol americano. Sendo assim, o trecho de código a seguir é útil na leitura de todas estas imagens que estão dentro da pasta \textit{images} localmente (\autoref{codigo5}).
+
+\begin{listing}[ht]
+\caption{\label{codigo5}Diretório de imagens.}
+\begin{minted}[linenos=true, breaklines=true, mathescape, bgcolor=cinza, breaklines, frame=single]{python}
+
+imagePaths = list(paths.list_images(args["images"]))
+
+\end{minted}
+\end{listing}
+
+A partir desta etapa, o algoritmo vai executar uma estrutura de repetição para analisar todas as fotos alocadas na variável \textit{imagePaths} utilizada no trecho de código acima.
+
+Sendo assim, o primeiro laço da estrutura de repetição fica responsável por carregar e redimensionar a imagem para reduzir o tempo de detecção. Em seguida, ele melhora a precisão da detecção da imagem para melhorar a extração de características (\autoref{codigo6}).
+
+\begin{listing}[ht]
+\caption{\label{codigo6}Estrutura de repetição responsável por carregar e redimensionar as imagens.}
+\begin{minted}[linenos=true, breaklines=true, mathescape, bgcolor=cinza, breaklines, frame=single]{python}
+
+for imagePath in imagePaths:
+	image = cv2.imread(imagePath)
+	image = imutils.resize(image, width=min(400, image.shape[1]))
+	orig = image.copy()
+
+\end{minted}
+\end{listing}
+
+Em seguida, o algoritmo tenta detectar se existe uma pessoa na imagem analisada (\autoref{codigo7}).
+
+\begin{listing}[ht]
+\caption{\label{codigo7}Detecção do objeto na imagem.}
+\begin{minted}[linenos=true, breaklines=true, mathescape, bgcolor=cinza, breaklines, frame=single]{python}
+
+    (rects, weights) = hog.detectMultiScale(image, winStride=(4, 4),
+        padding=(8, 8), scale=1.05)
+
+\end{minted}
+\end{listing}
+
+Após isso, a segunda estrutura de repetição (\autoref{codigo8}) que está alocada dentro da primeira (\autoref{codigo6}), fica responsável por delimitar os locais onde contém os pontos de interesse dentro da imagem analisada, ou seja, o algoritmo seleciona as áreas de interesse que serão utilizadas como parâmetro de busca.
+
+\begin{listing}[ht]
+\caption{\label{codigo8}Estrutura de repetição responsável por delimitar os pontos de interesse na imagem.}
+\begin{minted}[linenos=true, breaklines=true, mathescape, bgcolor=cinza, breaklines, frame=single]{python}
+
+    for (x, y, w, h) in rects:
+	cv2.rectangle(orig, (x, y), (x + w, y + h), (0, 0, 255), 2)
+
+\end{minted}
+\end{listing}
+
+Em seguida, o \textit{software} realiza a técnica de supressão não máxima na imagem, ou seja, ele realiza a técnica de detecção de bordas para identificar os \textit{pixel} de maior intensidade e, em seguida, ele realiza a técnica de supressão para eliminar os \textit{pixels} que não possuem valores próximos aos da borda (\autoref{codigo9}).
+
+\begin{listing}[ht]
+\caption{\label{codigo9}Técnica de supressão não máxima (detecção de bordas).}
+\begin{minted}[linenos=true, breaklines=true, mathescape, bgcolor=cinza, breaklines, frame=single]{python}
+
+    rects = np.array([[x, y, x + w, y + h] for (x, y, w, h) in rects])
+	pick = non_max_suppression(rects, probs=None, overlapThresh=0.65)
+
+\end{minted}
+\end{listing}
+
+A terceira estrutura de repetição fica responsável por montar uma delimitação do indivíduo detectado na imagem analisada (\autoref{codigo10}).
+
+%\clearpage
+
+\begin{listing}[ht]
+\caption{\label{codigo10}Delimitação do objeto identificado.}
+\begin{minted}[linenos=true, breaklines=true, mathescape, bgcolor=cinza, breaklines, frame=single]{python}
+
+    for (xA, yA, xB, yB) in pick:
+		cv2.rectangle(image, (xA, yA), (xB, yB), (0, 255, 0), 2)
+
+\end{minted}
+\end{listing}
+
+Apos os procedimentos, o algoritmo fica responsável por desenhar as correspondências de informações contidas entre as imagens analisadas (\autoref{codigo11}).
+
+\begin{listing}[ht]
+\caption{\label{codigo11}Desenho das correspondências.}
+\begin{minted}[linenos=true, breaklines=true, mathescape, bgcolor=cinza, breaklines, frame=single]{python}
+
+    filename = imagePath[imagePath.rfind("/") + 1:]
+	print("[INFO] {}: {} original boxes, {} after suppression".format
+		(filename, len(rects), len(pick)))
+
+\end{minted}
+\end{listing}
+
+Por fim, o sistema mostra duas imagens na tela, onde a primeira representa uma tentativa de identificar o conteúdo da imagem utilizando o \textit{haar cascade} e a técnica de aprendizado. Já na segunda imagem, a representação dos conteúdos são feitas após um aperfeiçoamento das características extraídas da imagem (\autoref{codigo12}). A \autoref{fig_comparativo_img} representa o resultado do algoritmo.
+
+\begin{listing}[ht]
+\caption{\label{codigo12}Comandos para representar os resultados.}
+\begin{minted}[linenos=true, breaklines=true, mathescape, bgcolor=cinza, breaklines, frame=single]{python}
+
+cv2.imshow("Before NMS", orig)
+cv2.imshow("After NMS", image)
+cv2.waitKey(0)
+
+\end{minted}
+\end{listing}
+
+\begin{figure}[h]
+	\caption{\label{fig_comparativo_img}\textbf{TESTE 01:} (A) – \textit{Haar-cascade} e aprendizado de máquina. (B) – Utilizando a técnica de aperfeiçoamento.}
+	\begin{center}
+		\resizebox{.8\linewidth}{!}{\includegraphics{6-Desenvolvimento-Projeto/imagens-desenvolvimento/comparativo_imagem.png}}
+	\end{center}
+	\centering \legend{Fonte: Elaborada pelos autores.}
+\end{figure}

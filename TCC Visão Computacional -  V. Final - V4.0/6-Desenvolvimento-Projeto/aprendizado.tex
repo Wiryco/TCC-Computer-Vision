@@ -1,0 +1,14 @@
+\section{\textbf{Etapa de aprendizado}}
+\label{explicacao-aprendizado}
+
+\newcommand{\refanexo}[1]{\hyperref[#1]{Anexo~\ref{#1}}}
+
+A etapa de aprendizado consiste basicamente em abordar quais imagens foram utilizadas como parâmetros de entrada para o treinamento do algoritmo. Essa etapa se faz necessária para entender quais características de jogadores de futebol americano foram analisadas para criar o melhor modelo de busca, que foi utilizado para realizar as comparações por similaridade.
+
+Para isso, foi utilizado o classificador \textit{haar cascade} para realizar a extração de características de todas as imagens dos jogadores. Essa extração de características foi feita utilizando o método não-supervisionado de extração, ou seja, o algoritmo fica responsável por analisar as imagens e ele mesmo define quais são os pontos de interesse contidos nela. A \autoref{classificacao-de-imagem} explica detalhadamente como essa técnica funciona.
+
+As imagens positivas, ou seja, imagens de jogadores de futebol americano, foram escolhidas seguindo as situações reais dentro de campo, ou seja, jogadores em movimento; jogadores em disputa de bola; jogadores parados, dentre outras situações. Portanto, foi feito um diretório contendo todas as imagens positivas, que serão utilizadas como parâmetro de entrada para que o algoritmo possa analisa e extrair todas as suas características. O diretório de imagens positivas pode ser visualizado no \refanexo{anexoA}.
+
+Já o \refanexo{anexoB} representa todas as imagens negativas, ou seja, imagens que não contém jogadores de futebol americano.
+
+Sendo assim, o algoritmo por si só fica responsável por ler todas essas imagens, positivas e negativas, extraindo todas as suas características. Simultaneamente, o \textit{machine learning} fica responsável por aprender o que é e o que não é um jogador de futebol americano. Em seguida, pode-se obter um modelo de busca mais robusto que contém o melhor padrão de característica para reconhecimento dos jogadores dentro de campo.
